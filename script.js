@@ -84,6 +84,10 @@ hozzadGomb.addEventListener('click', function(event) {
     feladatInput.value = '';
 });
 
-
+var navbar = document.getElementById('navbar');
+if (window.innerWidth < 600) {
+    document.getElementById('menuIcon').style.display = 'block';
+    navbar.style.display = 'none';
+}
 
 

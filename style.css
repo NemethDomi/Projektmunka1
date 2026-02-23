@@ -9,7 +9,12 @@ body {
     background: #f4f4f4;
     color: #222;
 }
-
+#menuIcon {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
 header {
     background: #4CAF50;
     color: white;
