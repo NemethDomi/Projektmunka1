@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 2rem 5%;
+}
+
+header h1 {
+    font-size: 6vw; 
+}
+
+nav {
+    background: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column; 
+}
+
+nav li {
+    padding: 1rem;
+    color: white;
+    border-bottom: 1px solid #555;
+}
+
+.temaValtas {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.temaValt {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+main {
+    padding: 2rem 5%;
+}
+
+.feladatok {
+    max-width: 100%;
+}
+
+form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.7rem;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 0.7rem 1rem;
+    background: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+.feladat {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.torles {
+    background: crimson;
+    border: none;
+    color: white;
+    padding: 0.5rem;
+    cursor: pointer;
+}
