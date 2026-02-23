@@ -101,3 +101,49 @@ form button {
     padding: 0.5rem;
     cursor: pointer;
 }
+
+@media (min-width: 600px) {
+
+    nav ul {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    nav li {
+        border: none;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 900px) {
+
+    body {
+        font-size: 1.1rem;
+    }
+
+    main {
+        padding: 3rem 10%;
+    }
+
+    .feladat {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    main {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    header h1 {
+        font-size: 3.5rem;
+    }
+}
