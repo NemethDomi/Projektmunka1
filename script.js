@@ -37,6 +37,7 @@ hozzadGomb.addEventListener('click', function(event) {
 
     var checkbox = document.createElement('input');
     checkbox.type = "checkbox";
+    checkbox.disabled = true;
 
     var pFeladat = document.createElement('p');
     pFeladat.textContent = feladatSzoveg;
@@ -45,7 +46,7 @@ hozzadGomb.addEventListener('click', function(event) {
     pStatusz.innerHTML = 'Státusz: <span class="pipa">✔️</span> / <span class="x">❌</span>';
 
     var pAdatok = document.createElement('p');
-    pAdatok.textContent = `userID: 1, id: 1, title: "${feladatSzoveg}", completed: false`;
+    pAdatok.textContent = `userID: 1, id: 1, title: "${feladatSzoveg}", befejezve: false`;
 
     var torlesGomb = document.createElement('button');
     torlesGomb.classList.add('torles');
@@ -64,10 +65,16 @@ hozzadGomb.addEventListener('click', function(event) {
 
     pipa.addEventListener('click', function() {
         feladatCard.style.backgroundColor = 'lightgreen';
+        pAdatok.textContent = `userID: 1, id: 1, title: "${feladatSzoveg}", befejezve: true`;
+        checkbox.checked = true;
+        checkbox.disabled = true;
     });
 
     x.addEventListener('click', function() {
         feladatCard.style.backgroundColor = 'lightcoral';
+        pAdatok.textContent = `userID: 1, id: 1, title: "${feladatSzoveg}", befejezve: false`;
+        checkbox.checked = false;
+        checkbox.disabled = true;
     });
 
     torlesGomb.addEventListener('click', function() {
