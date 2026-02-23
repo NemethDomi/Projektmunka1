@@ -23,35 +23,60 @@ sotetGomb.addEventListener('click', function() {
 
 hozzadGomb.addEventListener('click', function(event) {
     event.preventDefault();
+
     var feladatInput = document.getElementById('feladat');
     var feladatSzoveg = feladatInput.value.trim();
+
     if (feladatSzoveg === '') {
         alert('Kérem adjon meg egy feladatot!');
         return;
     }
-    if (feladatSzoveg !== '') {
-        var feladatCard = document.createElement('card');
-        feladatCard.classList.add('feladat');
-        var checkbox = document.createElement('checkbox');
-        var pFeladat = document.createElement('p');
-        var pStatusz = document.createElement('p');
-        var pAdatok = document.createElement('p');
-        var torlesGomb = document.createElement('button');
-        torlesGomb.classList.add('torles');
-        torlesGomb.textContent = 'Törlés';
-        pFeladat.textContent = feladatSzoveg;
-        pStatusz.innerHTML = 'Státusz: <span id="pipa">✔️</span> / <span id="x">❌</span>';
-        pAdatok.textContent = 'userID: 1, id: 1, title: "' + feladatSzoveg + '", completed: false';
-        feladatCard.appendChild(checkbox);
-        feladatCard.appendChild(pFeladat);
-        feladatCard.appendChild(pStatusz);
-        feladatCard.appendChild(pAdatok);
-        feladatCard.appendChild(torlesGomb);
-        document.querySelector('.feladatok').appendChild(feladatCard);
-        feladatInput.value = '';
-    }
+
+    var feladatCard = document.createElement('div');
+    feladatCard.classList.add('feladat');
+
+    var checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+
+    var pFeladat = document.createElement('p');
+    pFeladat.textContent = feladatSzoveg;
+
+    var pStatusz = document.createElement('p');
+    pStatusz.innerHTML = 'Státusz: <span class="pipa">✔️</span> / <span class="x">❌</span>';
+
+    var pAdatok = document.createElement('p');
+    pAdatok.textContent = `userID: 1, id: 1, title: "${feladatSzoveg}", completed: false`;
+
+    var torlesGomb = document.createElement('button');
+    torlesGomb.classList.add('torles');
+    torlesGomb.textContent = 'Törlés';
+
+    feladatCard.appendChild(checkbox);
+    feladatCard.appendChild(pFeladat);
+    feladatCard.appendChild(pStatusz);
+    feladatCard.appendChild(pAdatok);
+    feladatCard.appendChild(torlesGomb);
+
+    document.querySelector('.feladatok').appendChild(feladatCard);
+
+    var pipa = feladatCard.querySelector('.pipa');
+    var x = feladatCard.querySelector('.x');
+
+    pipa.addEventListener('click', function() {
+        feladatCard.style.backgroundColor = 'lightgreen';
+    });
+
+    x.addEventListener('click', function() {
+        feladatCard.style.backgroundColor = 'lightcoral';
+    });
+
+    torlesGomb.addEventListener('click', function() {
+        feladatCard.remove();
+    });
+
+    feladatInput.value = '';
 });
 
-torlesGomb.addEventListener('click', function() {
-    this.parentElement.remove();
-});
+
+
+
