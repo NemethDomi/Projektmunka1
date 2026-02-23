@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
+    <header id="fejlec">
         <h1>Reszponzív Feladatkezelő</h1>
     </header>
-    <nav>
+    <nav id="navbar">
         <ul>
             <li>Feladatok</li>
             <li>Feladatok törlése</li>
@@ -18,31 +18,22 @@
             <p>Témaváltás</p>
             <section class="temaValtas" aria-label="Téma váltó">
                 <button class="temaValt" aria-pressed="true" value="vilagos">
-                    Világos
                     <img src="assets/Képek/light-bulb (1).png" alt="">
                 </button>
                 <button class="temaValt" aria-pressed="false" value="sotet">
-                    Sötét
                     <img src="assets/Képek/house-rules.png" alt="">
                 </button>
 	        </section>
             </li>
         </ul>
     </nav>
-    <main>
+    <main id="tartalom">
         <div class="feladatok">
             <h2>Feladatok</h2>
             <form action="">
                 <input type="text" name="feladat" id="feladat" placeholder="Új feladat">
-                <button type="submit">Hozzáadás</button>
+                <button type="submit" onclick="hozzaAd">Hozzáadás</button>
             </form>
-
-            <card class="feladat">
-                <checkbox class="checkbox"></checkbox>
-                <p>Első feladat</p>
-                <p>userID: 1, id: 1, title: "delectus aut autem", completed: false</p>
-                <button class="torles">Törlés</button>
-            </card>
         </div>
     </main>
 <script src="script.js"></script>

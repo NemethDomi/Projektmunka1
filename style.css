@@ -44,10 +44,11 @@ nav li {
 }
 
 .temaValt {
+    background-color: transparent;
     padding: 0.5rem 1rem;
     border: none;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 3rem;
 }
 
 main {
@@ -100,4 +101,20 @@ form button {
     color: white;
     padding: 0.5rem;
     cursor: pointer;
+}
+img {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+#pipa:hover {
+    cursor: pointer;
+    color: green;
+    font-size: 1.2rem;
+}
+#x:hover {
+    cursor: pointer;
+    color: red;
+    font-size: 1.2rem;
 }
