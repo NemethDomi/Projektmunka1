@@ -35,6 +35,10 @@ nav ul {
     display: flex;
     flex-direction: column; 
 }
+a {
+    color: white;
+    text-decoration: none;
+}
 
 nav li {
     padding: 1rem;
@@ -177,9 +181,12 @@ form button {
         justify-content: space-between;
     }
 }
+#keresesGomb {
+    width: 100px;
+}
 img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     vertical-align: middle;
 }
 

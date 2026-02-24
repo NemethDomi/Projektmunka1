@@ -13,7 +13,7 @@ function createTodoCard(todo) {
     feladatCard.style.width = '500px';
     feladatCard.style.height = '300px';
     feladatCard.style.float = 'left';
-    feladatCard.style.margin = '5px 5px 0px 0px';
+    feladatCard.style.margin = '5px 5px 0px 50px';
     feladatCard.style.padding = '10px';
     feladatCard.style.border = '1px solid #ccc';
     feladatCard.style.borderRadius = '5px';
