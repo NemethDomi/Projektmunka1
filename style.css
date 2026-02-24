@@ -27,7 +27,7 @@ header h1 {
 }
 
 nav {
-    background: #333;
+    background: #226635;
 }
 
 nav ul {
@@ -108,8 +108,17 @@ form button {
     cursor: pointer;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 600px) {
+    #menuIconDiv {
+        background-color: #226635;
+    }
+    nav {
+        display: none;
 
+    }
+    #menuIcon {
+        display: block;
+    }
     nav ul {
         flex-direction: row;
         justify-content: space-around;
@@ -124,7 +133,7 @@ form button {
     }
 }
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
 
     body {
         font-size: 1.1rem;
@@ -142,8 +151,9 @@ form button {
 }
 
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
 
+    
     main {
         max-width: 1200px;
         margin: auto;
@@ -151,6 +161,11 @@ form button {
 
     header h1 {
         font-size: 3.5rem;
+    }
+    .feladat {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 img {

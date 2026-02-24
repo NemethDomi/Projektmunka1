@@ -10,8 +10,11 @@
     <header id="fejlec">
         <h1>Reszponzív Feladatkezelő</h1>
     </header>
-    <nav id="navbar">
+    <div id="menuIconDiv">
         <img src="assets/Képek/more.png" alt="Menü ikon" id="menuIcon">
+    </div>
+    <nav id="navbar">
+        
         <ul>
             <li>Feladatok</li>
             <li>Feladatok törlése</li>
@@ -31,9 +34,14 @@
     <main id="tartalom">
         <div class="feladatok">
             <h2>Feladatok</h2>
-            <form action="">
+            <form>
                 <input type="text" name="feladat" id="feladat" placeholder="Új feladat">
-                <button type="submit" onclick="hozzaAd">Hozzáadás</button>
+                <button type="submit" onclick="hozzaAd()" id="hozzaAdGomb">Hozzáadás</button>
+                
+            </form>
+            <form>
+                <input type="text" name="kereses" id="kereses" placeholder="Keresés">
+                <button type="submit" onclick="keres()" id="keresesGomb">Keresés</button>
             </form>
         </div>
     </main>

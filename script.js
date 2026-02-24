@@ -1,7 +1,9 @@
 var vilagosGomb = document.querySelector('button[value="vilagos"]');
 var sotetGomb = document.querySelector('button[value="sotet"]');
 var h2 = document.querySelector('h2');
-var hozzadGomb = document.querySelector('button[type="submit"]');
+var hozzadGomb = document.getElementById('hozzaAdGomb');
+var keresesGomb = document.getElementById('keresesGomb');
+var menuIcon = document.getElementById('menuIcon');
 
 vilagosGomb.addEventListener('click', function() {
     document.body.style.backgroundColor = '#f4f4f4';
@@ -34,7 +36,14 @@ hozzadGomb.addEventListener('click', function(event) {
 
     var feladatCard = document.createElement('div');
     feladatCard.classList.add('feladat');
-
+    feladatCard.style.width = '400px';
+    feladatCard.style.height = '200px';
+    feladatCard.style.float = 'left';
+    feladatCard.style.margin = '5px 5px 0px 0px';
+    feladatCard.style.padding = '10px';
+    feladatCard.style.border = '1px solid #ccc';
+    feladatCard.style.borderRadius = '5px';
+    feladatCard.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
     var checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.disabled = true;
@@ -84,10 +93,27 @@ hozzadGomb.addEventListener('click', function(event) {
     feladatInput.value = '';
 });
 
-var navbar = document.getElementById('navbar');
-if (window.innerWidth < 600) {
-    document.getElementById('menuIcon').style.display = 'block';
-    navbar.style.display = 'none';
-}
 
+keresesGomb.addEventListener('click', function(event) {
+    event.preventDefault();
+    var keresesiSzoveg = document.getElementById('kereses').value.trim().toLowerCase();
+    var feladatok = document.querySelectorAll('.feladat');
+    feladatok.forEach(function(feladat) {
+        var feladatSzoveg = feladat.querySelector('p').textContent.toLowerCase();
+        if (feladatSzoveg.includes(keresesiSzoveg)) {
+            feladat.style.display = 'block';
+        } else {
+            feladat.style.display = 'none';
+        }
+    });
+});
 
+menuIcon.addEventListener('click', function() {
+    var navbar = document.getElementById('navbar');
+    if (navbar.style.display === 'block') {
+        navbar.style.display = 'none';
+    } 
+    else {
+        navbar.style.display = 'block';
+    }
+});
