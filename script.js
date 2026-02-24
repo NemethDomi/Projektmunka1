@@ -114,13 +114,29 @@ hozzadGomb.addEventListener('click', function(event) {
 
     const ujTodo = {
         userId: 1,
-        id: Date.now(),
         title: feladatSzoveg,
         completed: false
     };
 
-    createTodoCard(ujTodo);
-    feladatInput.value = '';
+    fetch('https://jsonplaceholder.typicode.com/todos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(ujTodo)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Sikeres POST:', data);
+        createTodoCard(data);
+
+        feladatInput.value = '';
+        alert('Feladat sikeresen létrehozva (POST)!');
+    })
+    .catch(error => {
+        console.error('Hiba POST közben:', error);
+        alert('Hiba történt a feladat létrehozásakor!');
+    });
 });
 
 keresesGomb.addEventListener('click', function(event) {

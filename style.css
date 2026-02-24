@@ -91,7 +91,7 @@ form button {
     color: white;
     padding: 0.7rem 1rem;
     cursor: pointer;
-    margin-top: 1rem;
+    margin: 5px 0 5px 0;
 }
 
 .feladat {
