@@ -84,6 +84,15 @@ form button {
     cursor: pointer;
 }
 
+#OsszesTorlese
+{
+    background: crimson;
+    border: none;
+    color: white;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
 
 .feladat {
     background: white;
