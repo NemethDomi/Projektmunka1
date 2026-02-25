@@ -190,12 +190,12 @@ img {
     vertical-align: middle;
 }
 
-#pipa:hover {
+.pipa:hover {
     cursor: pointer;
     color: green;
     font-size: 1.2rem;
 }
-#x:hover {
+.x:hover {
     cursor: pointer;
     color: red;
     font-size: 1.2rem;

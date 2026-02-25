@@ -84,8 +84,8 @@ function createTodoCard(todo) {
 }
 
 vilagosGomb.addEventListener('click', function() {
-    document.body.style.backgroundColor = '#f4f4f4';
-    h2.style.color = 'black';
+    document.body.style.backgroundColor = 'black';
+    h2.style.color = 'white';
     document.body.classList.remove('sotet');
     document.body.classList.add('vilagos');
     vilagosGomb.setAttribute('aria-pressed', 'true');
@@ -93,15 +93,15 @@ vilagosGomb.addEventListener('click', function() {
 });
 
 sotetGomb.addEventListener('click', function() {
-    document.body.style.backgroundColor = 'black';
-    h2.style.color = 'white';
+    document.body.style.backgroundColor = '#f4f4f4';
+    h2.style.color = 'black';
     document.body.classList.remove('vilagos');
     document.body.classList.add('sotet');
     sotetGomb.setAttribute('aria-pressed', 'true');
     vilagosGomb.setAttribute('aria-pressed', 'false');
 });
 
-hozzadGomb.addEventListener('click', function(event) {
+hozzadGomb.addEventListener('click', async function(event) { {
     event.preventDefault();
 
     const feladatInput = document.getElementById('feladat');
@@ -118,25 +118,27 @@ hozzadGomb.addEventListener('click', function(event) {
         completed: false
     };
 
-    fetch('https://jsonplaceholder.typicode.com/todos', {
+    try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(ujTodo)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Sikeres POST:', data);
-        createTodoCard(data);
-
-        feladatInput.value = '';
-        alert('Feladat sikeresen létrehozva (POST)!');
-    })
-    .catch(error => {
-        console.error('Hiba POST közben:', error);
-        alert('Hiba történt a feladat létrehozásakor!');
     });
+
+    const adat = await response.json();
+
+    console.log('Sikeres POST:', adat);
+    createTodoCard(adat);
+
+    feladatInput.value = '';
+    alert('Feladat sikeresen létrehozva (POST)!');
+    } catch (error) {
+    console.error('Hiba POST közben:', error);
+    alert('Hiba történt a feladat létrehozásakor!');
+    }
+}
 });
 
 keresesGomb.addEventListener('click', function(event) {
@@ -157,8 +159,8 @@ menuIcon.addEventListener('click', function() {
 
 fetch('https://jsonplaceholder.typicode.com/todos')
   .then(response => response.json())
-  .then(data => {
-      data.slice(0, 20).forEach(todo => {
+  .then(adat => {
+      adat.slice(0, 20).forEach(todo => {
           createTodoCard(todo);
       });
   })
