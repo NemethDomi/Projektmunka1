@@ -135,8 +135,8 @@ hozzadGomb.addEventListener('click', async function(event) { {
     feladatInput.value = '';
     alert('Feladat sikeresen létrehozva (POST)!');
     } catch (error) {
-    console.error('Hiba POST közben:', error);
-    alert('Hiba történt a feladat létrehozásakor!');
+        console.error('Hiba POST közben:', error);
+        alert('Hiba történt a feladat létrehozásakor!');
     }
 }
 });
